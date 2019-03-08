@@ -27,6 +27,7 @@ import Svg,{
 
 import imgSrc from '../../assets/images/background.svg';
 import BackgroundSVG from '../../assets/images/background.svg';
+import * as dimension from '../../config/dimension'
 
 /*Use Background Image from react-native to display Background.*/
 // class Background extends React.Component {
@@ -60,7 +61,7 @@ const Background = (props) => (
       top : 0,
       bottom : 0,
       left : 0,
-      right : 0
+      right : 0,
     }}/>
     {props.children}
   </View>

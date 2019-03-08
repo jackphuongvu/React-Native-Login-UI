@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import * as dimension from '../../config/dimension'
 
 const styles = StyleSheet.create({
   loginContainer : {
@@ -13,7 +14,6 @@ const styles = StyleSheet.create({
   },
   fieldContainer : {
     paddingHorizontal : 24,
-    // backgroundColor : 'red',
   },
   mainTitle : {
     // fontFamily: "SFProDisplay",
@@ -21,14 +21,33 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     fontStyle: "normal",
     letterSpacing: 0,
-    color: "#5f5f5f"
+    color: "#5f5f5f",
   },
   desTitle : {
     fontSize: 18,
     fontWeight: "300",
     fontStyle: "normal",
     letterSpacing: 0,
+    // TODO: Update "theme" folder of this project.
+    color: 'rgba(95, 95, 95, 0.5)',
+  },
+  bottomContainer : {
+    justifyContent : 'center',
+    alignItems: 'center'
+  },
+  bottomContainerText : {
+    fontSize: 14,
+    fontWeight: "300",
+    fontStyle: "normal",
+    letterSpacing: 0,
     color: "#5f5f5f"
+  },
+  bottomContainerLink : {
+    fontSize: 14,
+    fontWeight: "bold",
+    letterSpacing: 0,
+    color: "#3b7cec",
+    marginTop : 3
   }
 });
 
