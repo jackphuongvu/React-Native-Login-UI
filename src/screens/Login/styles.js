@@ -3,20 +3,17 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   loginContainer : {
     flex : 1,
-    backgroundColor : 'white'
-  },
-  logo : {
-
   },
   logoImageContainer : {
-
+    alignItems : 'center',
+    justifyContent : 'center'
   },
   logoImage : {
     justifyContent: 'center',
   },
   fieldContainer : {
-    // justifyContent: 'center',
     paddingHorizontal : 24,
+    // backgroundColor : 'red',
   },
   mainTitle : {
     // fontFamily: "SFProDisplay",
@@ -33,7 +30,6 @@ const styles = StyleSheet.create({
     letterSpacing: 0,
     color: "#5f5f5f"
   }
-
 });
 
 export default styles;
