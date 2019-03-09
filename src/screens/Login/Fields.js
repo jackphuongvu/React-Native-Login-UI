@@ -4,23 +4,71 @@ import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+/**
+ * 1. Use 1 "onChangeText" function for all fields. => NOT DONE
+ * 2. Create Loading status of Form Submit
+ * 3. Create "onSubmitEditing" function for all fields
+ * 4. Create "Next Focus Submit" thing.
+ * - It's like when we are on this field, for example,
+ */
+const fields = ['phone', 'password'];
+
 class Fields extends React.Component {
   state = {
     phone: '',
     password : '',
     loadingSubmit : false,
-    secureTextEntry : false
+    secureTextEntry : false,
+    errors : {}
   };
 
   constructor(props) {
     super(props);
   }
+
+  /*set "Loading" submit form*/
   setLoadingSubmit = (loadingSubmit) => {
     this.setState({
       loadingSubmit
     });
   }
+
+  /**/
+  onChangeText = (e) => {
+    // Steps
+    // - get all "name" of all fields. (fields)
+    fields.forEach((name, index) => {
+      console.log(name)
+      // console.log(index)
+    })
+    // - Check if the field is focused or not.
+
+
+    // - Set state if it's focused.
+  }
+
   loginSubmit = () => {
+    // Test check focus field.
+    let check = this.password.focus();
+    console.log(check);
+
+    return;
+    // Steps
+    // - Check and validate fields
+    // + If all fields are good, set "loading" process
+    // + If fields are not valid, alert about messages
+    // - Fetch Login API
+    // - If it's not success, Alert the message.
+    // - If it's success, go to Home Screen as well.
+
+    /*Check fields here*/
+    // console.log('Check phone value')
+    // console.log(this.phone.value())
+    // ['phone', 'password'].forEach(() => {
+    //   // let value =
+    // })
+    // ----------------------------------
+
     this.setLoadingSubmit(true);
     // Doing something here!
 
@@ -57,12 +105,18 @@ class Fields extends React.Component {
       />
     );
   }
+  onSubmitPhone = () => {
+    // this.phone.focus();
+    // Submit for next field not this current field.
+    this.password.focus();
+  }
   render() {
     const { phone, password} = this.state;
     return (
       <View>
         <TextField
           ref={ref => this.phone = ref}
+          keyboardType='phone-pad'
           style={{
             // backgroundColor : 'red',
             // padding : 10
@@ -70,6 +124,8 @@ class Fields extends React.Component {
           label='Số điện thoại'
           value={phone}
           onChangeText={ (phone) => this.setState({ phone }) }
+          onSubmitEditing={this.onSubmitPhone}
+          // error="Phone failed"
         />
         <TextField
           ref={ref => this.password = ref}
@@ -79,9 +135,8 @@ class Fields extends React.Component {
           }}
           label='Mật khẩu'
           value={password}
-          onChangeText={ (e) => {
-            console.log('CHECK change password');
-            console.log(e.target);
+          onChangeText={ () => {
+
           }}
           onSubmitEditing={this.onSubmitPassword}
           // renderAccessory={this.renderPasswordAccessory}

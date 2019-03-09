@@ -15,7 +15,8 @@ class Login extends React.Component {
     return (
       <Background style={styles.loginContainer}>
         <View style={[{
-          flex : 2
+          flex : 2,
+          // backgroundColor : 'yellow'
         }, styles.logoImageContainer]}>
           <Animatable.Image style={styles.logoImage}
                             animation={'bounceIn'}
@@ -23,10 +24,13 @@ class Login extends React.Component {
                             delay={200}
                             source={logoSrc} />
         </View>
-        <View style={[{flex : 3}, styles.fieldContainer]}>
+        <View style={[{
+          // backgroundColor : 'green',
+          flex : 3
+        }, styles.fieldContainer]}>
           <Animatable.Text  animation={'fadeInUp'}
-                            // duration={2000}
-                            // delay={200}
+            // duration={2000}
+            // delay={200}
                             style={styles.mainTitle}>Chào buổi sáng</Animatable.Text>
           <Animatable.Text animation={'fadeInUp'}
                            delay={100}
