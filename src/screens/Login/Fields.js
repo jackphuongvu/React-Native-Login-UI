@@ -4,7 +4,6 @@ import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-import {BoxShadow} from 'react-native-shadow'
 import * as styles from './styles';
 
 /**
@@ -62,12 +61,6 @@ class Fields extends React.Component {
   }
 
   loginSubmit = () => {
-    // Test check focus field.
-    // const {phone, password} = this.state;
-    // console.log(phone)
-    // console.log(password)
-    //
-    // return;
     // Steps
     // - Check and validate fields
     // + If all fields are good, set "loading" process
