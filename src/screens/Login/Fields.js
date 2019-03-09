@@ -4,6 +4,9 @@ import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+import {BoxShadow} from 'react-native-shadow'
+import * as styles from './styles';
+
 /**
  * 1. Use 1 "onChangeText" function for all fields. => NOT DONE
  * 1.1. Create Password field.
@@ -30,19 +33,26 @@ class Fields extends React.Component {
     });
   }
 
-  /**/
   onChangeText = (value) => {
     // Steps
     // - get all "name" of all fields. (fields)
     fields.forEach((name) => {
       if (this[name].isFocused()) {
-        console.log(this[name]);
-        this.setState({
-          [name] : value
-        }, () => {
-          //
-          console.log(this.state.password);
-        });
+        // TODO:
+        // - Fix a bug when user change "Pass view" mode, value of this function is empty!
+        // if (name === 'password' && !value && this.state.password) {
+        //   console.log('Update old password')
+        //   console.log(this.state.password)
+        //   console.log(value)
+        //   this.setState({
+        //     [name] : this.state.password + value
+        //   });
+        // }
+
+        // else
+          this.setState({
+            [name] : value
+          });
       }
     })
     // - Check if the field is focused or not.
@@ -79,7 +89,6 @@ class Fields extends React.Component {
 
     /*Validate fields*/
     // Alert
-    //
 
     setTimeout(() => {
       this.setLoadingSubmit(false);
@@ -87,7 +96,11 @@ class Fields extends React.Component {
     //
   }
   onAccessoryPress = () => {
-    this.setState(({ secureTextEntry }) => ({ secureTextEntry: !secureTextEntry }));
+    // this.setState(({ secureTextEntry }) => ({ secureTextEntry: !secureTextEntry }));
+    console.log(this.state.password)
+    this.setState({
+      secureTextEntry : !this.state.secureTextEntry
+    });
   }
   onSubmitPassword = () => {
     this.password.blur();
@@ -147,26 +160,18 @@ class Fields extends React.Component {
           onSubmitEditing={this.onSubmitPassword}
           renderAccessory={this.renderPasswordAccessory}
         />
+        {/*Work with Boxshadow width*/}
+        {/*https://gist.github.com/lunvjp/cff4845545062027f0b8d06d2e2ae9c7*/}
         <Button
+          /*TODO: Update onPress for button*/
           // raised
-          // icon={{name: 'home', size: 32}}
+
           loading={this.state.loadingSubmit}
-          buttonStyle={{backgroundColor: '#00b937', borderRadius: 23,
-            shadowColor: "#17984D",
-            shadowOpacity: 0.5,
-            shadowRadius: 19.6,
-            shadowOffset: {
-              height: 13.6,
-              width: 0
-            },
-            paddingVertical : 13,
-            marginTop : 40
-          }}
+          buttonStyle={styles.buttonStyle}
           textStyle={{textAlign: 'center'}}
           onPress={this.loginSubmit}
-          // containerBorderRadius={8}
-          // innerBorderStyle={}
           title={'Đăng nhập ngay'}
+          titleStyle={styles.titleStyle}
         />
       </View>
     );

@@ -47,8 +47,34 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0,
     color: "#3b7cec",
-    marginTop : 3
+    marginTop : 3,
+    textDecorationLine : 'underline'
   }
 });
+
+const buttonStyle = {
+  backgroundColor: '#00b937',
+  // borderRadius: 23,
+  borderRadius: 23,
+  shadowColor: "#17984D",
+  shadowOpacity: 0.5,
+  shadowRadius: 19.6,
+  shadowOffset: {
+    height: 13.6,
+    width: 0
+  },
+  paddingVertical : 13,
+  marginTop : 40
+}
+
+const titleStyle = {
+  lineHeight : 19,
+  fontSize : 16
+}
+
+export {
+  buttonStyle,
+  titleStyle
+}
 
 export default styles;
