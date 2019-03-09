@@ -6,6 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 /**
  * 1. Use 1 "onChangeText" function for all fields. => NOT DONE
+ * 1.1. Create Password field.
  * 2. Create Loading status of Form Submit
  * 3. Create "onSubmitEditing" function for all fields
  * 4. Create "Next Focus Submit" thing.
@@ -18,13 +19,9 @@ class Fields extends React.Component {
     phone: '',
     password : '',
     loadingSubmit : false,
-    secureTextEntry : false,
+    secureTextEntry : true,
     errors : {}
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   /*set "Loading" submit form*/
   setLoadingSubmit = (loadingSubmit) => {
@@ -34,12 +31,19 @@ class Fields extends React.Component {
   }
 
   /**/
-  onChangeText = (e) => {
+  onChangeText = (value) => {
     // Steps
     // - get all "name" of all fields. (fields)
-    fields.forEach((name, index) => {
-      console.log(name)
-      // console.log(index)
+    fields.forEach((name) => {
+      if (this[name].isFocused()) {
+        console.log(this[name]);
+        this.setState({
+          [name] : value
+        }, () => {
+          //
+          console.log(this.state.password);
+        });
+      }
     })
     // - Check if the field is focused or not.
 
@@ -49,10 +53,11 @@ class Fields extends React.Component {
 
   loginSubmit = () => {
     // Test check focus field.
-    let check = this.password.focus();
-    console.log(check);
-
-    return;
+    // const {phone, password} = this.state;
+    // console.log(phone)
+    // console.log(password)
+    //
+    // return;
     // Steps
     // - Check and validate fields
     // + If all fields are good, set "loading" process
@@ -81,7 +86,7 @@ class Fields extends React.Component {
     }, 2000)
     //
   }
-  onAccessoryPress() {
+  onAccessoryPress = () => {
     this.setState(({ secureTextEntry }) => ({ secureTextEntry: !secureTextEntry }));
   }
   onSubmitPassword = () => {
@@ -106,12 +111,11 @@ class Fields extends React.Component {
     );
   }
   onSubmitPhone = () => {
-    // this.phone.focus();
     // Submit for next field not this current field.
-    this.password.focus();
+    // this.password.focus();
   }
   render() {
-    const { phone, password} = this.state;
+    const { phone, password, secureTextEntry} = this.state;
     return (
       <View>
         <TextField
@@ -123,7 +127,8 @@ class Fields extends React.Component {
           }}
           label='Số điện thoại'
           value={phone}
-          onChangeText={ (phone) => this.setState({ phone }) }
+          onChangeText={this.onChangeText}
+          returnKeyType='next'
           onSubmitEditing={this.onSubmitPhone}
           // error="Phone failed"
         />
@@ -133,13 +138,14 @@ class Fields extends React.Component {
           inputContainerStyle={{
             // paddingLeft : 50
           }}
+          secureTextEntry={secureTextEntry}
           label='Mật khẩu'
           value={password}
-          onChangeText={ () => {
-
-          }}
+          onChangeText={this.onChangeText}
+          enablesReturnKeyAutomatically={true}
+          returnKeyType='done'
           onSubmitEditing={this.onSubmitPassword}
-          // renderAccessory={this.renderPasswordAccessory}
+          renderAccessory={this.renderPasswordAccessory}
         />
         <Button
           // raised
@@ -151,7 +157,7 @@ class Fields extends React.Component {
             shadowRadius: 19.6,
             shadowOffset: {
               height: 13.6,
-              // width: 0.3
+              width: 0
             },
             paddingVertical : 13,
             marginTop : 40
