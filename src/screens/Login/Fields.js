@@ -89,11 +89,7 @@ class Fields extends React.Component {
     //
   }
   onAccessoryPress = () => {
-    // this.setState(({ secureTextEntry }) => ({ secureTextEntry: !secureTextEntry }));
-    console.log(this.state.password)
-    this.setState({
-      secureTextEntry : !this.state.secureTextEntry
-    });
+    this.setState(({ secureTextEntry }) => ({ secureTextEntry: !secureTextEntry }));
   }
   onSubmitPassword = () => {
     this.password.blur();
@@ -131,7 +127,7 @@ class Fields extends React.Component {
             // backgroundColor : 'red',
             // padding : 10
           }}
-          label='Số điện thoại'
+          placeholder='Số điện thoại'
           value={phone}
           onChangeText={this.onChangeText}
           returnKeyType='next'
@@ -141,16 +137,42 @@ class Fields extends React.Component {
         <TextField
           ref={ref => this.password = ref}
           // inputContainerPadding={20}
-          inputContainerStyle={{
-            // paddingLeft : 50
-          }}
+          // inputContainerStyle={{
+          //   // paddingLeft : 50,
+          //   backgroundColor : 'green',
+          //   padding : 20
+          // }}
           secureTextEntry={secureTextEntry}
-          label='Mật khẩu'
+          // label='Mật khẩu'
           value={password}
           onChangeText={this.onChangeText}
           enablesReturnKeyAutomatically={true}
           returnKeyType='done'
           onSubmitEditing={this.onSubmitPassword}
+          placeholder={'Mật khẩu'}
+          // labelPadding={20}
+          // affixTextStyle={{
+          //   backgroundColor : 'red'
+          // }}
+          // containerStyle={{
+          //   backgroundColor : 'yellow',
+          //   padding : 20
+          // }}
+          renderLeftAccessory={() => {
+            return (
+              <MaterialIcons
+                size={24}
+                style={{
+                  paddingRight : 20,
+                  paddingLeft : 2
+                }}
+                name={'visibility'}
+                color={TextField.defaultProps.baseColor}
+                onPress={this.onAccessoryPress}
+                suppressHighlighting
+              />
+            )
+          }}
           renderAccessory={this.renderPasswordAccessory}
         />
         {/*Work with Boxshadow width*/}
