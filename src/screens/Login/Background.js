@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, ImageBackground, View} from 'react-native';
-// import SvgUri from 'react-native-svg-uri';
+import {KeyboardAvoidingView} from 'react-native';
 import Svg,{
   Circle,
   Ellipse,
@@ -50,12 +50,30 @@ import * as dimension from '../../config/dimension'
 //   }
 // }
 
-const Background = (props) => (
-  <View style={{
-    flex : 1,
-    // alignItems : 'center',
-    // justifyContent : 'center',
-  }}>
+// 2.
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
+// const Background = (props) => (
+//   <View style={{
+//     flex : 1
+//   }}>
+//     <BackgroundSVG style={{
+//       position : 'absolute',
+//       top : 0,
+//       bottom : 0,
+//       left : 0,
+//       right : 0,
+//     }}/>
+//     <KeyboardAvoidingView behavior="padding" enabled>
+//       {props.children}
+//     </KeyboardAvoidingView>
+//   </View>
+// )
+
+const BackgroundFix = (props) => (
+  <KeyboardAvoidingView enabled
+                        behavior="padding"
+                        style={{flex : 1}}>
     <BackgroundSVG style={{
       position : 'absolute',
       top : 0,
@@ -64,7 +82,7 @@ const Background = (props) => (
       right : 0,
     }}/>
     {props.children}
-  </View>
+  </KeyboardAvoidingView>
 )
 
-export default Background;
+export default BackgroundFix;
