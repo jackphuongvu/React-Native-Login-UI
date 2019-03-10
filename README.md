@@ -13,7 +13,7 @@ Login Screen              |  Login Screen GIF
 ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen-iphone8.png)  |  ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen-gray-background.gif)
 
 ## Back-end
-- [ ][![Node API](https://github.com/lunvjp/MERN-boilerplate)]
+- [ ] ![Node API](https://github.com/lunvjp/MERN-boilerplate)
 
 ## Tech used
 - [x] React
