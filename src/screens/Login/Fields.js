@@ -4,6 +4,7 @@ import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LottieView from 'lottie-react-native';
+import AwesomeButton from "react-native-really-awesome-button";
 import * as Icons from '../../config/icons';
 
 import * as styles from './styles';
@@ -11,10 +12,9 @@ import * as styles from './styles';
 /**
  * 1. Use 1 "onChangeText" function for all fields. => NOT DONE
  * 1.1. Create Password field.
- * 2. Create Loading status of Form Submit
+ * 2. Create Loading status of Form Submit => DONE
  * 3. Create "onSubmitEditing" function for all fields
- * 4. Create "Next Focus Submit" thing.
- * - It's like when we are on this field, for example,
+ * 4. Create "Next Focus Submit" thing. => DONE
  */
 const fields = ['phone', 'password'];
 
@@ -101,10 +101,6 @@ class Fields extends React.Component {
   onAccessoryPress = () => {
     this.setState(({ secureTextEntry }) => ({ secureTextEntry: !secureTextEntry }));
   }
-  onSubmitPassword = () => {
-    this.password.blur();
-  }
-
   renderPasswordAccessory = () => {
     let { secureTextEntry, forgetPassword } = this.state;
 
@@ -163,12 +159,13 @@ class Fields extends React.Component {
     }));
   }
   onSubmitPhone = () => {
-    // Submit for next field not this current field.
-    // this.password.focus();
+    this.password.focus();
+  }
+  onSubmitPassword = () => {
+    this.password.blur();
   }
   render() {
-    const { phone, password, secureTextEntry} = this.state;
-    // let focusTextInput = this.password.isFocused();
+    const { phone, password, secureTextEntry} = this.state;;
     return (
       <View>
         <TextField
@@ -291,33 +288,42 @@ class Fields extends React.Component {
         />
         {/*Work with Boxshadow width*/}
         {/*https://gist.github.com/lunvjp/cff4845545062027f0b8d06d2e2ae9c7*/}
-        <Button
+        <AwesomeButton
+          raiseLevel={1}
+          backgroundColor={'#00b937'}
+          backgroundShadow={'#17984D'}
+          // backgroundActive={'#17984D'}
+          backgroundDarker={'#008026'}
+          borderRadius={23}
+          borderWidth={0}
+          height={46}
+          stretch={true}
           style={{
-            backgroundColor: 'yellow',
             marginTop : 40,
             borderRadius: 23,
+            shadowColor: "#17984D",
+            shadowOpacity: 0.5,
+            shadowRadius: 19.6,
+            shadowOffset: {
+              height: 10,
+              // height: 5,
+              width: 0
+            },
           }}
-          // type="clear"
-
-          loading={this.state.loadingSubmit}
-          buttonStyle={styles.buttonStyle}
-          loadingStyle={{
-            marginVertical: 1
-          }}
-          textStyle={{textAlign: 'center'}}
-          onPress={this.loginSubmit}
-          title={'Đăng nhập ngay'}
-          titleStyle={styles.titleStyle}
-        />
-        {/*<LottieView*/}
-          {/*style={{*/}
-            {/*paddingRight : 20,*/}
-            {/*paddingLeft : 2*/}
-          {/*}}*/}
-          {/*source={require('../../assets/buttons/lock-for-password.json')}*/}
-          {/*autoPlay*/}
-          {/*loop*/}
-        {/*/>*/}
+          progress
+          onPress={next => {
+            /** Do Something **/
+            setTimeout(() => {
+              next();
+            }, 2000)
+          }}>
+          <Text style={{
+            fontSize : 16,
+            color : '#ffffff'
+          }}>
+            Đăng nhập ngay
+          </Text>
+        </AwesomeButton>
       </View>
     );
   }
