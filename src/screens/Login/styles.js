@@ -63,7 +63,9 @@ const buttonStyle = {
     width: 0
   },
   paddingVertical : 13,
-  marginTop : 40
+  // marginTop : 40,
+  // padding : 0,
+  // backgroundColor: 'yellow'
 }
 
 const titleStyle = {

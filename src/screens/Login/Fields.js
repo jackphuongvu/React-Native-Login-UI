@@ -297,32 +297,56 @@ class Fields extends React.Component {
           /*TODO: Update onPress for button*/
           // - Fix a bug with "click" sign in button.
           // raised
-          selectedButtonStyle={{
-            // backgroundColor : 'red',
-          }}
-          // style={{
-          //   // backgroundColor : 'red',
-          //   // flex : 1,
-          //   // alignItems : 'stretch',
-          //   lineHeight : 20,
-          //   // height : 100,
-          //   backgroundColor: '#00b937',
-          //   borderRadius: 23,
-          //   shadowColor: "#17984D",
-          //   shadowOpacity: 0.5,
-          //   shadowRadius: 19.6,
-          //   shadowOffset: {
-          //     height: 13.6,
-          //     width: 0
-          //   },
-          //   paddingVertical : 13,
-          //   // height : 50,
-          //   // marginTop : 40
+          // selectedButtonStyle={{
+          //   backgroundColor : 'red',
           // }}
+          // buttonStyle={{
+          //   padding : 0
+          // }}
+          style={{
+            // backgroundColor : 'red',
+            // flex : 1,
+            // alignItems : 'stretch',
+            // lineHeight : 20,
+            // height : 100,
+            backgroundColor: 'yellow',
+            marginTop : 40,
+            borderRadius: 23,
+          }}
           // type="clear"
 
           // loading={this.state.loadingSubmit}
-          buttonStyle={styles.buttonStyle}
+          // buttonStyle={styles.buttonStyle}
+          buttonStyle={{
+            backgroundColor: '#00b937',
+            borderRadius: 23,
+            shadowColor: "#17984D",
+            shadowOpacity: 0.5,
+            shadowRadius: 19.6,
+            shadowOffset: {
+              height: 13.6,
+              width: 0
+            },
+            // elevation: 0
+          }}
+          containerStyle={{
+            // marginTop : 20,
+            // backgroundColor: 'red',
+            // borderRadius: 23,
+            // elevation: 0
+            // shadowColor: "#17984D",
+            // shadowOpacity: 0.5,
+            // shadowRadius: 19.6,
+            // shadowOffset: {
+            //   height: 13.6,
+            //   width: 0
+            // },
+            // padding : 10
+            // backgroundColor: '#00b937',
+          }}
+          loadingStyle={{
+            marginVertical: 0
+          }}
           textStyle={{textAlign: 'center'}}
           onPress={this.loginSubmit}
           title={'Đăng nhập ngay'}
