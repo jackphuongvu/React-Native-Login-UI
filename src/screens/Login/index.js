@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Button } from 'react-native-elements';
+import AppButton from '../../components/AppButton';
 
 import Background from './Background';
 import Fields from './Fields';
@@ -16,7 +17,6 @@ class Login extends React.Component {
       <Background style={styles.loginContainer}>
         <View style={[{
           flex : 2,
-          // backgroundColor : 'yellow'
         }, styles.logoImageContainer]}>
           <Animatable.Image style={styles.logoImage}
                             animation={'bounceIn'}
@@ -44,22 +44,11 @@ class Login extends React.Component {
             },
             styles.bottomContainer]}>
             <Text style={styles.bottomContainerText}>Bạn chưa có tài khoản?</Text>
-            <Button type="clear"
-                    buttonStyle={{
-                      padding : 0
-                    }}
-                    title="Đăng ký tại đây"
-                    titleStyle={{
-                      fontSize: 14,
-                      fontWeight: "bold",
-                      letterSpacing: 0,
-                      color: "#3b7cec",
-                      textDecorationLine : 'underline',
-                      padding : 0
-            }}
-                    onPress={() => {
-                      alert ('Navigate to Sign Up Screen (Update soon)')
-                    }}/>
+            <AppButton type="clear"
+                       title="Đăng ký tại đây"
+                       onPress={() => {
+                         alert ('Navigate to Sign Up Screen (Update soon)')
+                       }}/>
           </View>
         </View>
       </Background>

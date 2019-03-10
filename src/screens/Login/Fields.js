@@ -5,6 +5,7 @@ import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LottieView from 'lottie-react-native';
 import AwesomeButton from "react-native-really-awesome-button";
+import AppButton from '../../components/AppButton';
 import * as Icons from '../../config/icons';
 
 import * as styles from './styles';
@@ -288,42 +289,14 @@ class Fields extends React.Component {
         />
         {/*Work with Boxshadow width*/}
         {/*https://gist.github.com/lunvjp/cff4845545062027f0b8d06d2e2ae9c7*/}
-        <AwesomeButton
-          raiseLevel={1}
-          backgroundColor={'#00b937'}
-          backgroundShadow={'#17984D'}
-          // backgroundActive={'#17984D'}
-          backgroundDarker={'#008026'}
-          borderRadius={23}
-          borderWidth={0}
-          height={46}
-          stretch={true}
-          style={{
-            marginTop : 40,
-            borderRadius: 23,
-            shadowColor: "#17984D",
-            shadowOpacity: 0.5,
-            shadowRadius: 19.6,
-            shadowOffset: {
-              height: 10,
-              // height: 5,
-              width: 0
-            },
-          }}
-          progress
-          onPress={next => {
-            /** Do Something **/
-            setTimeout(() => {
-              next();
-            }, 2000)
-          }}>
-          <Text style={{
-            fontSize : 16,
-            color : '#ffffff'
-          }}>
-            Đăng nhập ngay
-          </Text>
-        </AwesomeButton>
+        <AppButton type='solid'
+                   title='Đăng nhập ngay'
+                   onPress={next => {
+          /** Do Something **/
+          setTimeout(() => {
+            next();
+          }, 2000)
+        }}/>
       </View>
     );
   }
