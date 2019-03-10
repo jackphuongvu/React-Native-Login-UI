@@ -5,7 +5,7 @@
 
 * User Authentication Implementation using react-native. This is a Work in Progress!
 
-* Let's give me a Start if it's useful to you! Thanks.
+* Let's give me a Star if it's useful to you! Thanks.
 
 ## Screenshots
 
@@ -13,4 +13,6 @@ Login Screen              |  Login Screen GIF
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen.png)  |  ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen.gif)
 
-
+## Project made by
+* Designer : [Jang Trịnh](https://www.linkedin.com/in/jangtrinh/)
+* Developer : [Jack](https://www.linkedin.com/in/phuong-jack)
