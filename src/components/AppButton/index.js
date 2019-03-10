@@ -23,11 +23,11 @@ class AppButton extends React.Component {
     if (type === 'solid')
       return (
         <AwesomeButton
-          raiseLevel={1}
+          raiseLevel={1.2}
           backgroundColor={'#00b937'}
           backgroundShadow={'#17984D'}
           // backgroundActive={'#17984D'}
-          backgroundDarker={'#008026'}
+          backgroundDarker={'#00b336'}
           borderRadius={23}
           borderWidth={0}
           height={46}
@@ -39,12 +39,12 @@ class AppButton extends React.Component {
             shadowOpacity: 0.5,
             shadowRadius: 19.6,
             shadowOffset: {
-              height: 10,
+              height: 12,
               // height: 5,
               width: 0
             },
           }}
-          progress
+          // progress
           onPress={onPress}>
           <Text style={{
             fontSize : 16,
