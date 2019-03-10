@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Hyperlink from 'react-native-hyperlink';
+import { Button } from 'react-native-elements';
 
 import Background from './Background';
 import Fields from './Fields';
@@ -39,16 +40,33 @@ class Login extends React.Component {
                            }]}>Đăng nhập để truy cập tài khoản của bạn</Animatable.Text>
           <Fields/>
           <View style={[
-            // {flex : 1},
             {
-              marginTop : 33,
-              // backgroundColor : 'red'
+              marginTop : 33
             },
             styles.bottomContainer]}>
             <Text style={styles.bottomContainerText}>Bạn chưa có tài khoản?</Text>
-            <Hyperlink linkDefault={ true }>
-              <Text style={styles.bottomContainerLink}>Đăng ký tại đây</Text>
-            </Hyperlink>
+            {/*<Hyperlink onPress={ (url, text) => alert(url + ", " + text) }*/}
+                       {/*// linkDefault={ true }*/}
+            {/*>*/}
+              {/*<Text style={styles.bottomContainerLink}>Đăng ký tại đây</Text>*/}
+            {/*</Hyperlink>*/}
+            <Button type="clear"
+                    buttonStyle={{
+                      padding : 0
+                    }}
+                    title="Đăng ký tại đây"
+                    titleStyle={{
+                      fontSize: 14,
+                      fontWeight: "bold",
+                      letterSpacing: 0,
+                      color: "#3b7cec",
+                      marginTop : 3,
+                      textDecorationLine : 'underline',
+                      padding : 0
+            }}
+                    onPress={() => {
+                      alert ('Navigate to Sign Up Screen (Update soon)')
+                    }}/>
           </View>
         </View>
       </Background>

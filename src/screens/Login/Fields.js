@@ -139,6 +139,9 @@ class Fields extends React.Component {
     if (forgetPassword )
       return (
         <Button title="Quên mật khẩu?"
+                buttonStyle={{
+                  padding : 0
+                }}
                 titleStyle={styles.forgetPasswordTitleButtonStyle}
                 onPress={() => {
                   alert('Navigate to Forget Password Screen (Update soon)')
@@ -167,10 +170,12 @@ class Fields extends React.Component {
   }
   render() {
     const { phone, password, secureTextEntry} = this.state;
+    // let focusTextInput = this.password.isFocused();
     return (
       <View>
         <TextField
           ref={ref => this.phone = ref}
+          baseColor="#e6e6e6"
           tintColor="#272066"
           keyboardType='phone-pad'
           label=''
@@ -179,6 +184,9 @@ class Fields extends React.Component {
           onChangeText={this.onChangeText}
           returnKeyType='next'
           onSubmitEditing={this.onSubmitPhone}
+          inputContainerStyle={{
+            borderBottomWidth : 1,
+          }}
           renderLeftAccessory={() => {
             return (
               <View style={{
@@ -194,14 +202,27 @@ class Fields extends React.Component {
         <TextField
           ref={ref => this.password = ref}
           // inputContainerPadding={20}
+          // containerStyle={{
+          //   backgroundColor : 'green',
+          // }}
+          // inputContainerStyleOverrides={{
+          //   borderBottomWidth : 1,
+          //   borderBottomColor : '#e6e6e6'
+          // }}
           inputContainerStyle={{
             // paddingLeft : 50,
-            // backgroundColor : 'green',
+            // backgroundColor : 'red',
+            borderBottomWidth : 1,
+            // borderBottomColor : this.password.isFocused() ? '#e6e6e6' : ''
             // padding : 20,
             // paddingBottom : 20,
             // paddingTop : 25,
             // margin : 20
           }}
+          // style={{
+          //   borderBottomWidth : 1
+          // }}
+          baseColor="#e6e6e6"
           tintColor="#272066"
           secureTextEntry={secureTextEntry}
           label=''

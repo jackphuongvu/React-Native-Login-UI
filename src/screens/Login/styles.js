@@ -76,8 +76,8 @@ const forgetPasswordTitleButtonStyle = {
   fontSize : 14,
   color: 'rgba(95, 95, 95, 0.5)',
   // backgroundColor : 'red',
-  height : 16,
-  lineHeight : 16
+  // height : 16,
+  // lineHeight : 16,
 }
 
 export {
