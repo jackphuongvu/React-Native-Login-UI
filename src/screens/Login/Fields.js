@@ -5,7 +5,6 @@ import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LottieView from 'lottie-react-native';
 import * as Icons from '../../config/icons';
-// import LockIcon from '../../assets/icons/https.svg';
 
 import * as styles from './styles';
 
