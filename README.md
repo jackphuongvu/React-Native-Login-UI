@@ -17,10 +17,10 @@ Login Screen              |  Login Screen GIF
 
 ## Tech used
 - [x] React
-- Updating...
+- [ ] Updating...
 
 ## Mind Node
-![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Mind Node.png)
+![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Mind-Node.png)
 
 ## Project made by
 * Designer : ![Jang Trịnh](https://www.linkedin.com/in/jangtrinh/)
