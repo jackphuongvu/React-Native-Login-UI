@@ -9,6 +9,6 @@ User Authentication Implementation using react-native. This is a Work in Progres
 
 Login Screen              |  Login Screen GIF
 :-------------------------:|:-------------------------:
-![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen.png)  |  ![]](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen.gif)
+![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen.png)  |  ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen.gif)
 
 
