@@ -49,12 +49,11 @@ const styles = StyleSheet.create({
     color: "#3b7cec",
     marginTop : 3,
     textDecorationLine : 'underline'
-  }
+  },
 });
 
 const buttonStyle = {
   backgroundColor: '#00b937',
-  // borderRadius: 23,
   borderRadius: 23,
   shadowColor: "#17984D",
   shadowOpacity: 0.5,
@@ -72,9 +71,19 @@ const titleStyle = {
   fontSize : 16
 }
 
+const forgetPasswordTitleButtonStyle = {
+  fontWeight : 'bold',
+  fontSize : 14,
+  color: 'rgba(95, 95, 95, 0.5)',
+  // backgroundColor : 'red',
+  height : 16,
+  lineHeight : 16
+}
+
 export {
   buttonStyle,
-  titleStyle
+  titleStyle,
+  forgetPasswordTitleButtonStyle
 }
 
 export default styles;

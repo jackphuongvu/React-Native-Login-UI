@@ -1,8 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import LottieView from 'lottie-react-native';
+import Hyperlink from 'react-native-hyperlink';
+import * as Icons from '../../config/icons';
+// import LockIcon from '../../assets/icons/https.svg';
 
 import * as styles from './styles';
 
@@ -22,6 +26,7 @@ class Fields extends React.Component {
     password : '',
     loadingSubmit : false,
     secureTextEntry : true,
+    forgetPassword : true,
     errors : {}
   };
 
@@ -46,6 +51,13 @@ class Fields extends React.Component {
         //   this.setState({
         //     [name] : this.state.password + value
         //   });
+        // }
+
+        /*Update "Forget Password" mode*/
+        // if (name === 'password') {
+        //   this.setState({
+        //     forgetPassword : false,
+        //   })
         // }
 
         // else
@@ -96,11 +108,43 @@ class Fields extends React.Component {
   }
 
   renderPasswordAccessory = () => {
-    let { secureTextEntry } = this.state;
+    let { secureTextEntry, forgetPassword } = this.state;
 
     let name = secureTextEntry?
       'visibility':
       'visibility-off';
+
+    /*Created Forget password by Link*/
+    // if (forgetPassword) {
+    //   return (
+    //     <Hyperlink onLongPress={ (url, text) => alert(url + ", " + text) }
+    //                style={{
+    //       backgroundColor : 'red',
+    //       zIndex : 9999
+    //     }}
+    //                onPress={() => {
+    //       console.log('onPress')
+    //                  alert('Hyperlink onPress');
+    //     }}
+    //                linkDefault={ true }>
+    //       <Text style={{
+    //         fontWeight : 'bold',
+    //         fontSize : 14,
+    //         color: 'rgba(95, 95, 95, 0.5)',
+    //       }}>Quên mật khẩu?</Text>
+    //     </Hyperlink>
+    //   );
+    // }
+
+    if (forgetPassword )
+      return (
+        <Button title="Quên mật khẩu?"
+                titleStyle={styles.forgetPasswordTitleButtonStyle}
+                onPress={() => {
+                  alert('Navigate to Forget Password Screen (Update soon)')
+                }}
+                type="clear"/>
+      )
 
     return (
       <MaterialIcons
@@ -112,6 +156,11 @@ class Fields extends React.Component {
       />
     );
   }
+  onDisplayForgetPassword = () => {
+    this.setState(({forgetPassword}) => ({
+      forgetPassword : !forgetPassword
+    }));
+  }
   onSubmitPhone = () => {
     // Submit for next field not this current field.
     // this.password.focus();
@@ -122,28 +171,40 @@ class Fields extends React.Component {
       <View>
         <TextField
           ref={ref => this.phone = ref}
+          tintColor="#272066"
           keyboardType='phone-pad'
-          style={{
-            // backgroundColor : 'red',
-            // padding : 10
-          }}
+          label=''
           placeholder='Số điện thoại'
           value={phone}
           onChangeText={this.onChangeText}
           returnKeyType='next'
           onSubmitEditing={this.onSubmitPhone}
+          renderLeftAccessory={() => {
+            return (
+              <View style={{
+                paddingRight: 20,
+                paddingLeft: 2
+              }}>
+                <Icons.PhoneIcon/>
+              </View>
+            )
+          }}
           // error="Phone failed"
         />
         <TextField
           ref={ref => this.password = ref}
           // inputContainerPadding={20}
-          // inputContainerStyle={{
-          //   // paddingLeft : 50,
-          //   backgroundColor : 'green',
-          //   padding : 20
-          // }}
+          inputContainerStyle={{
+            // paddingLeft : 50,
+            // backgroundColor : 'green',
+            // padding : 20,
+            // paddingBottom : 20,
+            // paddingTop : 25,
+            // margin : 20
+          }}
+          tintColor="#272066"
           secureTextEntry={secureTextEntry}
-          // label='Mật khẩu'
+          label=''
           value={password}
           onChangeText={this.onChangeText}
           enablesReturnKeyAutomatically={true}
@@ -159,35 +220,102 @@ class Fields extends React.Component {
           //   padding : 20
           // }}
           renderLeftAccessory={() => {
+
             return (
-              <MaterialIcons
-                size={24}
-                style={{
-                  paddingRight : 20,
-                  paddingLeft : 2
-                }}
-                name={'visibility'}
-                color={TextField.defaultProps.baseColor}
-                onPress={this.onAccessoryPress}
-                suppressHighlighting
-              />
+              <View style={{
+                paddingRight : 20,
+                paddingLeft : 2
+              }}>
+                <Icons.LockIcon/>
+              </View>
             )
+            // return (
+            //   <MaterialIcons
+            //     size={24}
+            //     style={{
+            //       paddingRight : 20,
+            //       paddingLeft : 2
+            //     }}
+            //     name={'visibility'}
+            //     color={TextField.defaultProps.baseColor}
+            //     onPress={this.onAccessoryPress}
+            //     suppressHighlighting
+            //   />
+            // )
+            /*END*/
+
+            /*TODO: Use animation icons soon.*/
+            // https://lottiefiles.com/479-micro-interaction-phone-ringing
+            // https://lottiefiles.com/512-lock
+            // return (
+            //   <LottieView
+            //     style={{
+            //       // flex : 1,
+            //       justifyContent : 'flex-start',
+            //       width : 50,
+            //       height : 50,
+            //       backgroundColor : 'red',
+            //       paddingRight : 20,
+            //       paddingLeft : 2
+            //     }}
+            //     // source={require('../../assets/buttons/lock-for-password-primary-color.json')}
+            //     source={require('../../assets/buttons/animation-w800-h600.json')}
+            //     autoPlay
+            //     loop
+            //   />
+            // )
+            /*END*/
           }}
           renderAccessory={this.renderPasswordAccessory}
+          onFocus={this.onDisplayForgetPassword}
+          onBlur={this.onDisplayForgetPassword}
         />
         {/*Work with Boxshadow width*/}
         {/*https://gist.github.com/lunvjp/cff4845545062027f0b8d06d2e2ae9c7*/}
         <Button
           /*TODO: Update onPress for button*/
+          // - Fix a bug with "click" sign in button.
           // raised
+          selectedButtonStyle={{
+            // backgroundColor : 'red',
+          }}
+          // style={{
+          //   // backgroundColor : 'red',
+          //   // flex : 1,
+          //   // alignItems : 'stretch',
+          //   lineHeight : 20,
+          //   // height : 100,
+          //   backgroundColor: '#00b937',
+          //   borderRadius: 23,
+          //   shadowColor: "#17984D",
+          //   shadowOpacity: 0.5,
+          //   shadowRadius: 19.6,
+          //   shadowOffset: {
+          //     height: 13.6,
+          //     width: 0
+          //   },
+          //   paddingVertical : 13,
+          //   // height : 50,
+          //   // marginTop : 40
+          // }}
+          // type="clear"
 
-          loading={this.state.loadingSubmit}
+          // loading={this.state.loadingSubmit}
           buttonStyle={styles.buttonStyle}
           textStyle={{textAlign: 'center'}}
           onPress={this.loginSubmit}
           title={'Đăng nhập ngay'}
           titleStyle={styles.titleStyle}
         />
+        {/*<LottieView*/}
+          {/*style={{*/}
+            {/*paddingRight : 20,*/}
+            {/*paddingLeft : 2*/}
+          {/*}}*/}
+          {/*source={require('../../assets/buttons/lock-for-password.json')}*/}
+          {/*autoPlay*/}
+          {/*loop*/}
+        {/*/>*/}
       </View>
     );
   }
