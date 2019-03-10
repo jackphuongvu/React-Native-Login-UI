@@ -4,7 +4,6 @@ import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LottieView from 'lottie-react-native';
-import Hyperlink from 'react-native-hyperlink';
 import * as Icons from '../../config/icons';
 // import LockIcon from '../../assets/icons/https.svg';
 
@@ -302,18 +301,7 @@ class Fields extends React.Component {
           // type="clear"
 
           loading={this.state.loadingSubmit}
-          // buttonStyle={styles.buttonStyle}
-          buttonStyle={{
-            backgroundColor: '#00b937',
-            borderRadius: 23,
-            shadowColor: "#17984D",
-            shadowOpacity: 0.5,
-            shadowRadius: 19.6,
-            shadowOffset: {
-              height: 13.6,
-              width: 0
-            }
-          }}
+          buttonStyle={styles.buttonStyle}
           loadingStyle={{
             marginVertical: 1
           }}

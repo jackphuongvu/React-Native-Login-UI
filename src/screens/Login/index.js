@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import Hyperlink from 'react-native-hyperlink';
 import { Button } from 'react-native-elements';
 
 import Background from './Background';
@@ -45,11 +44,6 @@ class Login extends React.Component {
             },
             styles.bottomContainer]}>
             <Text style={styles.bottomContainerText}>Bạn chưa có tài khoản?</Text>
-            {/*<Hyperlink onPress={ (url, text) => alert(url + ", " + text) }*/}
-                       {/*// linkDefault={ true }*/}
-            {/*>*/}
-              {/*<Text style={styles.bottomContainerLink}>Đăng ký tại đây</Text>*/}
-            {/*</Hyperlink>*/}
             <Button type="clear"
                     buttonStyle={{
                       padding : 0
@@ -60,7 +54,6 @@ class Login extends React.Component {
                       fontWeight: "bold",
                       letterSpacing: 0,
                       color: "#3b7cec",
-                      marginTop : 3,
                       textDecorationLine : 'underline',
                       padding : 0
             }}
