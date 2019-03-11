@@ -10,7 +10,8 @@ const AppStyles = {
     // grey: 'grey',
     // green: 'green',
     // onlineGreen: '#2ecc71',
-    // lightWhite: '#f9f9f9'
+    // lightWhite: '#f9f9f9',
+    icon : '#272066'
   },
   fonts : {
     FONT_REGULAR : '',

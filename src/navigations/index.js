@@ -3,7 +3,7 @@ import { createSwitchNavigator, createAppContainer, createDrawerNavigator } from
 // createBottomTabNavigator
 
 import Login from '../screens/Login';
-import BottomTabNavigation from './BottomTabNavigation';
+import BottomTabNavigation from './BottomTabNavigationNew';
 import Home from "../screens/Home";
 import CustomDrawerContentComponent from "./DrawerNavigation/CustomDrawerContentComponent";
 // import DrawerNavigator from "./DrawerNavigation";

@@ -21,11 +21,11 @@ class Home extends React.Component {
     ),
     title : 'Jack title'
   };
-  componentDidMount () {
-    console.log('Check props')
-    console.log(this.props);
-    // this.props.navigation.openDrawer();
-  }
+  // componentDidMount () {
+  //   console.log('Check props')
+  //   console.log(this.props);
+  //   // this.props.navigation.openDrawer();
+  // }
   render() {
     return (
       <View style={{
