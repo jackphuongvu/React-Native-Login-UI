@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Button } from 'react-native-elements';
+
+import MostPopularProject from './MostPopularProject';
 /**
  * Steps
  * 1. Bottom navigation
@@ -23,16 +25,14 @@ class Home extends React.Component {
   render() {
     return (
       <View style={{
-        flex : 1,
-        justifyContent : 'center',
-        alignItems : 'center',
         backgroundColor : 'white'
       }}>
+        <MostPopularProject/>
         {/*<Button title="Solid Button"*/}
                 {/*onPress={() => {*/}
           {/*this.props.navigation.openDrawer();*/}
         {/*}} />*/}
-        <Text>Home Screen</Text>
+        {/*<Text>Home Screen</Text>*/}
       </View>
     );
   }

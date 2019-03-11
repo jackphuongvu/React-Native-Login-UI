@@ -11,6 +11,9 @@ import AppStyles from '../config/styles';
 
 const HeaderLeft = withNavigation((props) => (
   <MaterialIcons.Button backgroundColor="transparent"
+                        style={{
+                          marginLeft : 5
+                        }}
                         activeOpacity={0.5}
                         underlayColor="transparent"
                         onPress={() => {
