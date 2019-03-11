@@ -44,7 +44,7 @@ class AppButton extends React.Component {
               width: 0
             },
           }}
-          // progress
+          progress
           onPress={onPress}>
           <Text style={{
             fontSize : 16,
