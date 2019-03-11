@@ -14,23 +14,23 @@ Login Screen              |  Login Screen GIF
 
 ## Libraries used:
 
-##### UI Library
+#### UI Library
 * [react-native-elements](https://react-native-training.github.io/react-native-elements/) with more than 15K stars on Github.
 
-##### Layouts
+#### Layouts
 * Use [react-native-svg](https://github.com/react-native-community/react-native-svg) and [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer) to import SVG file as background of Login Screen.
 * Use [react-native-material-textfield](https://github.com/n4kz/react-native-material-textfield) to handle fields submit and UI.
 * Use [react-native-really-awesome-button](https://github.com/rcaferati/react-native-really-awesome-button) to build a well-displayed button with Shadow effect
 * Use [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) to display awesome Icon for Text input fields. 
 
-##### Animation: [react-native-animatable](https://github.com/oblador/react-native-animatable)
+#### Animation: [react-native-animatable](https://github.com/oblador/react-native-animatable)
 - Animate `bounceIn` for Logo
 - Animate `fadeInUp` for 2 Introduction texts.
 
-##### Responsive
+#### Responsive
 - [ ] [react-native-responsive-screen](https://github.com/marudy/react-native-responsive-screen) to update layouts for Small/Medium/Large/Tablets/iPad screens i.e iPhone 4S, ...
 
-##### Navigation
+#### Navigation
 - [ ] [react-navigation](https://github.com/react-navigation/react-navigation) for Navigating Between Screens in the entire App.
 
 ## Back-end
