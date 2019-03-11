@@ -23,6 +23,6 @@ Login Screen              |  Login Screen GIF
 ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Mind-Node.png)
 
 ## Project made by
-* Designer : [Jang Trịnh](https://www.linkedin.com/in/jangtrinh/)
-* Developer : [Jack](https://www.linkedin.com/in/phuong-jack)
+
 * Designer : <a href="https://www.linkedin.com/in/jangtrinh/" target="_blank">Jang Trịnh</a>
+* Developer : <a href="https://www.linkedin.com/in/phuong-jack" target="_blank">Jack</a>
