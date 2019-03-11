@@ -6,13 +6,16 @@
 
 * Let's give me a Star if you guys find it useful to you! Thanks.
 
+## Presentation Video
+[![React Native Login App - Introduction - Vietnamese version](https://img.youtube.com/vi/mKKyOhk4yNg/0.jpg)](https://www.youtube.com/watch?v=mKKyOhk4yNg)
+
 ## Screenshots
 
 Login Screen              |  Login Screen GIF
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen-iphone8.png)  |  ![](https://raw.githubusercontent.com/lunvjp/React-Native-Login-App/master/screen_images/Login-Screen-gray-background.gif)
 
-## Libraries used:
+## Libraries used
 
 #### UI Library
 * [react-native-elements](https://react-native-training.github.io/react-native-elements/) with more than 15K stars on Github.
@@ -47,3 +50,7 @@ Login Screen              |  Login Screen GIF
 
 * Designer : <a href="https://www.linkedin.com/in/jangtrinh" target="_blank">Jang Trịnh</a>
 * Developer : <a href="https://www.linkedin.com/in/phuong-jack" target="_blank">Jack</a>
+
+## Download
+- Android APK: [Google Drive link](https://drive.google.com/uc?id=11uoMsaOYXYw67otsmOv3cdLAQEE7UXXt&export=download)
+

@@ -3,8 +3,6 @@ import {View, Text} from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import { Button } from 'react-native-elements';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import LottieView from 'lottie-react-native';
-import AwesomeButton from "react-native-really-awesome-button";
 import AppButton from '../../components/AppButton';
 import * as Icons from '../../config/icons';
 
