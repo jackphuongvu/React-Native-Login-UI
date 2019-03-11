@@ -7,7 +7,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "lottie-react-native": "^2.5.11",
     "prop-types": "^15.7.2",
     "react": "16.6.3",
     "react-native": "0.58.6",
@@ -15,8 +14,6 @@
     "react-native-elements": "^1.1.0",
     "react-native-material-textfield": "AlexisLeon/react-native-material-textfield",
     "react-native-really-awesome-button": "^1.4.0",
-    "react-native-shadow": "^1.2.2",
-    "react-native-status-bar-height": "^2.2.0",
     "react-native-svg": "^9.2.4",
     "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.2"
