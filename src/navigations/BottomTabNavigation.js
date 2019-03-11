@@ -1,5 +1,5 @@
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-import { createStackNavigator, createSwitchNavigator ,createDrawerNavigator } from 'react-navigation';
+import { createStackNavigator, createSwitchNavigator ,createDrawerNavigator, withNavigation} from 'react-navigation';
 import AppStyles from '../config/styles';
 import React from 'react';
 import {Text} from 'react-native';
@@ -11,12 +11,13 @@ import TransactionList from '../screens/TransactionList';
 import User from '../screens/User';
 
 import headerNavigationOptions from './Header';
-// import CustomDrawerContentComponent from "./DrawerNavigation/CustomDrawerContentComponent";
+import CustomDrawerContentComponent from "./DrawerNavigation/CustomDrawerContentComponent";
 
+/*Detail 5 Tabs*/
 const BottomTabNavigator = createMaterialBottomTabNavigator({
   Home: { screen: Home },
-  Activity: { screen: Activity },
   ProjectList: { screen: ProjectList },
+  Activity: { screen: Activity },
   TransactionList: { screen: TransactionList },
   User: { screen: User }
 }, {
@@ -27,48 +28,27 @@ const BottomTabNavigator = createMaterialBottomTabNavigator({
   labeled : true,
   shifting : false,
   // barStyle :
-}, {
-  ...headerNavigationOptions,
-  title : 'Jack title'
 });
 
-// createStackNavigator
+/*Create Main screen for 5 tabs.*/
 const HomeStackNavigator = createStackNavigator({
   BottomTabNavigator : {
     // path: '/home',
     screen: BottomTabNavigator,
   },
 }, {
-  // ...headerNavigationOptions,
-  title : 'Jack title'
+  ...headerNavigationOptions,
+  // headerMode : 'float'
 });
 
+/*Main screen*/
 const DrawerNavigator = createDrawerNavigator({
-  // BottomTabNavigator : {
-  //   // path: '/home',
-  //   screen: BottomTabNavigator,
-  // },
   HomeStackNavigator : {
     screen : HomeStackNavigator
   }
 }, {
-  // contentComponent : () => (
-  //   <CustomDrawerContentComponent/>
-  // )
+  contentComponent : (props) => (
+    <CustomDrawerContentComponent {...props}/>
+  )
 });
 export default DrawerNavigator;
-
-// import DrawerNavigator from './DrawerNavigation';
-
-//
-// // export default createSwitchNavigator({
-// export default createStackNavigator({
-//   BottomTabNavigator : {
-//     screen : BottomTabNavigator,
-//   },
-//   DrawerNavigator : {
-//     screen : DrawerNavigator
-//   }
-// }, {
-//   initialRouteName: 'BottomTabNavigator',
-// })

@@ -18,14 +18,8 @@ class Home extends React.Component {
         size={26}
         style={{ color: focused ? tintColor : '#ccc' }}
       />
-    ),
-    title : 'Jack title'
+    )
   };
-  // componentDidMount () {
-  //   console.log('Check props')
-  //   console.log(this.props);
-  //   // this.props.navigation.openDrawer();
-  // }
   render() {
     return (
       <View style={{
@@ -34,10 +28,10 @@ class Home extends React.Component {
         alignItems : 'center',
         backgroundColor : 'white'
       }}>
-        <Button title="Solid Button"
-                onPress={() => {
-          this.props.navigation.openDrawer();
-        }} />
+        {/*<Button title="Solid Button"*/}
+                {/*onPress={() => {*/}
+          {/*this.props.navigation.openDrawer();*/}
+        {/*}} />*/}
         <Text>Home Screen</Text>
       </View>
     );
