@@ -7,7 +7,7 @@
 * Let's give me a Star if you guys find it useful to you! Thanks.
 
 ## Presentation Video
-[![React Native Login App - Introduction - Vietnamese version](https://img.youtube.com/vi/mKKyOhk4yNg/0.jpg)](https://www.youtube.com/watch?v=mKKyOhk4yNg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mKKyOhk4yNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Screenshots
 
