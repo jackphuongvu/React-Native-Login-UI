@@ -25,8 +25,12 @@ class Home extends React.Component {
     //   />
     // )
     tabBarIcon : ({ tintColor, focused }) => (
-      <HomeIcon fill={focused ? tintColor : AppStyles.styles.inactiveGreyColor}/>
-    )
+      <HomeIcon style={{
+        // paddingBottom : 5,
+        // marginBottom : 5,
+        // backgroundColor: 'red'
+      }} fill={focused ? tintColor : AppStyles.styles.inactiveGreyColor}/>
+    ),
   };
   render() {
     return (

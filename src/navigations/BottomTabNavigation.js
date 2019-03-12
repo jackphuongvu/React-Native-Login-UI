@@ -1,5 +1,7 @@
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
-import { createStackNavigator, createSwitchNavigator ,createDrawerNavigator, withNavigation} from 'react-navigation';
+import { createStackNavigator, createSwitchNavigator ,createDrawerNavigator, withNavigation,
+  createBottomTabNavigator
+} from 'react-navigation';
 import AppStyles from '../config/styles';
 import React from 'react';
 import {Text} from 'react-native';
@@ -27,8 +29,46 @@ const BottomTabNavigator = createMaterialBottomTabNavigator({
   barStyle: { backgroundColor: '#ffffff' },
   labeled : true,
   shifting : false,
-  // barStyle :
 });
+
+/*Another version of BottomTabNavigator*/
+// const BottomTabNavigator = createBottomTabNavigator({
+//   Home: { screen: Home },
+//   ProjectList: { screen: ProjectList },
+//   Activity: { screen: Activity },
+//   TransactionList: { screen: TransactionList },
+//   User: { screen: User }
+// }, {
+//   initialRouteName: 'Home',
+//   tabBarOptions : {
+//     activeTintColor : AppStyles.styles.accentColor,
+//     // activeBackgroundColor : AppStyles.styles.accentColor,
+//     inactiveTintColor : AppStyles.styles.inactiveGreyColor,
+//     style : {
+//       // backgroundColor: '#ffffff',
+//       // backgroundColor: 'red',
+//       // paddingTop : 20
+//
+//     },
+//     labelStyle: {
+//       fontSize: 10,
+//       // fontWeight: "normal",
+//       // fontStyle: "normal",
+//       letterSpacing: 0.09,
+//       // color: "#999999"
+//     }
+//     // tabStyle : {
+//     //   backgroundColor: 'red',
+//     //   marginTop : 20
+//     // }
+//   },
+//   // activeColor : AppStyles.styles.accentColor,
+//   // inactiveColor: AppStyles.styles.inactiveGreyColor,
+//   // barStyle: { backgroundColor: '#ffffff' },
+//   // labeled : true,
+//   // shifting : false,
+// });
+/*END: Another version of BottomTabNavigator*/
 
 /*Create Main screen for 5 tabs.*/
 const HomeStackNavigator = createStackNavigator({
