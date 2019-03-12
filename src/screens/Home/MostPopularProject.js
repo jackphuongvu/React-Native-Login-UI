@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import styles from './styles';
 /**
  * Steps
  * featured image
@@ -16,7 +18,12 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
  */
 const users = [
   {
-    name: 'Jang Trinh vừa giới thiệu 1 khách hàng cho dự án Central Premium.',
+    // name: 'Jang Trinh vừa giới thiệu 1 khách hàng cho dự án Central Premium.',
+    name: (
+      <Text>
+        <Text style={styles.nameStyle}>Jang Trinh</Text> vừa giới thiệu <Text style={styles.customerStyle}>1 khách hàng</Text> cho dự án Central Premium.
+      </Text>
+    ),
     // avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
     avatar: 'https://avatars3.githubusercontent.com/u/23715737?s=460&v=4'
   },
@@ -47,9 +54,9 @@ class MostPopularProject extends React.Component {
         >
           {
             users.map((u, i) => {
-              console.log(u)
               return (
                 <ListItem
+                  /*TODO: Fix an issue with dotted border.*/
                   style={{
                     // borderTopStyle : 'dotted',
                     // borderStyle : 'dotted'

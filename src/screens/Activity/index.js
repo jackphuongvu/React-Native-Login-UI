@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import AlertIcon from '../../components/AppIcons/Alert';
+import ProjectIcon from '../../components/AppIcons/Project';
+import AppStyles from '../../config/styles';
 /**
  * Steps
  *
@@ -9,13 +11,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 class Activity extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Thông báo',
+    // tabBarIcon: ({ tintColor, focused }) => (
+    //   <MaterialCommunityIcons
+    //     name={'bell-ring-outline'}
+    //     // name={focused ? focusedIcon : icon}
+    //     size={26}
+    //     style={{ color: focused ? tintColor : '#ccc' }}
+    //   />
+    // ),
     tabBarIcon: ({ tintColor, focused }) => (
-      <MaterialCommunityIcons
-        name={'home'}
-        // name={focused ? focusedIcon : icon}
-        size={26}
-        style={{ color: focused ? tintColor : '#ccc' }}
-      />
+      <AlertIcon fill={focused ? tintColor : AppStyles.styles.inactiveGreyColor}/>
     ),
   };
   render() {
